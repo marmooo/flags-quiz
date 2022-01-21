@@ -1,4 +1,4 @@
-var CACHE_NAME = '2022-01-20 13:00';
+var CACHE_NAME = '2022-01-20 13:15';
 var urlsToCache = [
   "/flags-quiz/",
   "/flags-quiz/index.js",
