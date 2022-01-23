@@ -1,7 +1,11 @@
-var CACHE_NAME = '2022-01-20 13:15';
+var CACHE_NAME = '2022-01-23 09:10';
 var urlsToCache = [
   "/flags-quiz/",
   "/flags-quiz/index.js",
+  "/flags-quiz/en/",
+  "/flags-quiz/ja/",
+  "/flags-quiz/data/en.csv",
+  "/flags-quiz/data/ja.csv",
   "/flags-quiz/mp3/incorrect1.mp3",
   "/flags-quiz/mp3/correct3.mp3",
   "/flags-quiz/favicon/original.svg",
