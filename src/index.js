@@ -152,6 +152,17 @@ function initProblems() {
   });
 }
 
+// Windows は国旗の絵文字が出ないので専用の絵文字フォントを使用
+if (navigator.userAgent.indexOf("Windows") != -1) {
+  const fontFace = new FontFace(
+    "flags",
+    "url(/flags-quiz/flags.woff2)",
+  );
+  fontFace.load().then(function () {
+    document.fonts.add(fontFace);
+    document.getElementById("flag").style.fontFamily = "flags";
+  });
+}
 initProblems();
 loadProblems();
 
