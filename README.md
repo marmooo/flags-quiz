@@ -12,7 +12,8 @@ bash build.sh
 
 - Windows font is
   [google-fonts/noto-emoji](https://github.com/googlefonts/noto-emoji) licensed
-  under the [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt)
+  under the
+  [SIL Open Font License, version 1.1](https://github.com/googlefonts/noto-emoji/blob/main/fonts/LICENSE)
 
 ## License
 
