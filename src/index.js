@@ -99,15 +99,16 @@ function nextProblem() {
   const choices = [...document.getElementById("choices").children];
   choices.forEach((choice, i) => {
     if (i == answerPos) {
-      choice.textContent = problems[pos][1];
+      choice.textContent = problems[pos][2];
     } else {
       let candidatePos;
       do {
         candidatePos = getRandomInt(0, problems.length);
       } while (problems[candidatePos][0] == answerFlag);
-      choice.textContent = problems[candidatePos][1];
+      choice.textContent = problems[candidatePos][2];
     }
   });
+  gio.switchCountry(problems[pos][1]);
 }
 
 function scoring() {
@@ -121,8 +122,8 @@ function loadProblems() {
     .then((response) => response.text())
     .then((csv) => {
       csv.trim().split("\n").forEach((line) => {
-        const [flag, name] = line.split(",");
-        problems.push([flag, name]);
+        const [flag, id, name] = line.split(",");
+        problems.push([flag, id, name]);
       });
       shuffle(problems);
     });
@@ -152,6 +153,40 @@ function initProblems() {
   });
 }
 
+function initGlobe() {
+  const obj = document.getElementById("globe");
+  const config = {
+    "control": {
+      "stats": false,
+      "disableUnmentioned": false,
+      "lightenMentioned": true,
+      "inOnly": false,
+      "outOnly": false,
+      "initCountry": "JP",
+      "halo": true,
+      "transparentBackground": false,
+      "autoRotation": false,
+      "rotationRatio": 1
+    },
+    "color": {
+      "surface": 16777215,
+      "selected": 2141154,
+      "in": 16777215,
+      "out": 2141154,
+      "halo": 2141154,
+      "background": 0
+    },
+    "brightness": {
+      "ocean": 1.0,
+      "mentioned": 0.5,
+      "related": 0.5
+    }
+  };
+  const gio = new GIO.Controller(obj, config);
+  gio.init();
+  return gio;
+}
+
 // Windows は国旗の絵文字が出ないので専用の絵文字フォントを使用
 if (navigator.userAgent.indexOf("Windows") != -1) {
   const fontFace = new FontFace(
@@ -165,6 +200,7 @@ if (navigator.userAgent.indexOf("Windows") != -1) {
 }
 initProblems();
 loadProblems();
+const gio = initGlobe();
 
 document.getElementById("toggleDarkMode").onclick = toggleDarkMode;
 document.getElementById("startButton").onclick = nextProblem;

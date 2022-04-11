@@ -1,4 +1,4 @@
-var CACHE_NAME = '2022-03-19 07:00';
+var CACHE_NAME = '2022-04-12 00:00';
 var urlsToCache = [
   "/flags-quiz/",
   "/flags-quiz/index.js",
@@ -10,6 +10,8 @@ var urlsToCache = [
   "/flags-quiz/mp3/correct3.mp3",
   "/flags-quiz/favicon/original.svg",
   "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css",
+  "https://cdn.jsdelivr.net/npm/three@0.102.1/build/three.min.js",
+  "https://cdn.jsdelivr.net/npm/giojs@2.2.2/build/gio.min.js",
 ];
 
 self.addEventListener("install", function (event) {
