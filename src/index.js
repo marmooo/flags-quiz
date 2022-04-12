@@ -196,7 +196,7 @@ function initGlobe() {
       }
       const countryInfo = document.getElementById("countryInfo");
       countryInfo.addEventListener("hidden.bs.toast", () => {
-        gio.switchCountry(answerCountry);
+        gio.switchCountry(answerId);
       });
       const toast = bootstrap.Toast.getOrCreateInstance(countryInfo);
       toast.show();
