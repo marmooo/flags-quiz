@@ -184,7 +184,7 @@ function initGlobe() {
   };
   const gio = new GIO.Controller(obj, config);
   gio.onCountryPicked((selectedCountry, _relatedCountries) => {
-    const answerId = problems[answerPos][1];
+    const answerId = (totalCount == 0) ? "JP" : problems[totalCount][1];
     const selectedId = selectedCountry.ISOCode;
     if (answerId != selectedId) {
       const target = problems.find(x => x[1] == selectedId);
