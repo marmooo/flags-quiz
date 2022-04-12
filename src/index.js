@@ -126,6 +126,7 @@ function loadProblems() {
         problems.push([flag, id, name]);
       });
       shuffle(problems);
+      answerPos = problems.findIndex(x => x[1] == "JP");
     });
 }
 
@@ -183,6 +184,25 @@ function initGlobe() {
     }
   };
   const gio = new GIO.Controller(obj, config);
+  gio.onCountryPicked((selectedCountry, _relatedCountries) => {
+    const answerCountry = problems[answerPos][1];
+    if (answerCountry != selectedCountry) {
+      const selectedId = selectedCountry.ISOCode;
+      const target = problems.find(x => x[1] == selectedId);
+      const countryName = document.getElementById("countryName");
+      if (target) {
+        countryName.textContent = target[2];
+      } else {
+        countryName.textContent = "The country is not registered.";
+      }
+      const countryInfo = document.getElementById("countryInfo");
+      countryInfo.addEventListener("hidden.bs.toast", () => {
+        gio.switchCountry(answerCountry);
+      });
+      const toast = bootstrap.Toast.getOrCreateInstance(countryInfo);
+      toast.show();
+    }
+  });
   gio.init();
   return gio;
 }
