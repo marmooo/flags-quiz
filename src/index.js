@@ -5,7 +5,7 @@ const audioContext = new AudioContext();
 let totalCount = 0;
 let correctCount = 0;
 let answerPos = 0;
-let problems = [];
+const problems = [];
 loadConfig();
 
 function loadConfig() {
@@ -166,7 +166,7 @@ function initGlobe() {
       "halo": true,
       "transparentBackground": false,
       "autoRotation": false,
-      "rotationRatio": 1
+      "rotationRatio": 1,
     },
     "color": {
       "surface": 16777215,
@@ -174,20 +174,20 @@ function initGlobe() {
       "in": 16777215,
       "out": 2141154,
       "halo": 2141154,
-      "background": 0
+      "background": 0,
     },
     "brightness": {
       "ocean": 1.0,
       "mentioned": 0.5,
-      "related": 0.5
-    }
+      "related": 0.5,
+    },
   };
   const gio = new GIO.Controller(obj, config);
   gio.onCountryPicked((selectedCountry, _relatedCountries) => {
     const answerId = (totalCount == 0) ? "JP" : problems[totalCount][1];
     const selectedId = selectedCountry.ISOCode;
     if (answerId != selectedId) {
-      const target = problems.find(x => x[1] == selectedId);
+      const target = problems.find((x) => x[1] == selectedId);
       const countryName = document.getElementById("countryName");
       if (target) {
         countryName.textContent = target[2];
