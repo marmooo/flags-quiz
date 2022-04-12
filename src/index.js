@@ -126,7 +126,6 @@ function loadProblems() {
         problems.push([flag, id, name]);
       });
       shuffle(problems);
-      answerPos = problems.findIndex(x => x[1] == "JP");
     });
 }
 
