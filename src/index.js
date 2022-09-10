@@ -81,8 +81,8 @@ function getRandomInt(min, max) {
 }
 
 function shuffle(array) {
-  for (i = array.length; 1 < i; i--) {
-    k = Math.floor(Math.random() * i);
+  for (let i = array.length; 1 < i; i--) {
+    const k = Math.floor(Math.random() * i);
     [array[k], array[i - 1]] = [array[i - 1], array[k]];
   }
   return array;
