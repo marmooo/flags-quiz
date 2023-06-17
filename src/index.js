@@ -4,8 +4,8 @@ let answerPos = 0;
 const problems = [];
 const audioContext = new AudioContext();
 const audioBufferCache = {};
-loadAudio("correct", "mp3/correct3.mp3");
-loadAudio("incorrect", "mp3/incorrect1.mp3");
+loadAudio("correct", "/flags-quiz/mp3/correct3.mp3");
+loadAudio("incorrect", "/flags-quiz/mp3/incorrect1.mp3");
 loadConfig();
 
 function loadConfig() {
