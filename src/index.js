@@ -10,17 +10,17 @@ loadConfig();
 
 function loadConfig() {
   if (localStorage.getItem("darkMode") == 1) {
-    document.documentElement.dataset.theme = "dark";
+    document.documentElement.setAttribute("data-bs-theme", "dark");
   }
 }
 
 function toggleDarkMode() {
   if (localStorage.getItem("darkMode") == 1) {
     localStorage.setItem("darkMode", 0);
-    delete document.documentElement.dataset.theme;
+    document.documentElement.setAttribute("data-bs-theme", "light");
   } else {
     localStorage.setItem("darkMode", 1);
-    document.documentElement.dataset.theme = "dark";
+    document.documentElement.setAttribute("data-bs-theme", "dark");
   }
 }
 
@@ -149,7 +149,7 @@ function initGlobe() {
       "outOnly": false,
       "initCountry": "JP",
       "halo": true,
-      "transparentBackground": false,
+      "transparentBackground": true,
       "autoRotation": false,
       "rotationRatio": 1,
     },
@@ -159,7 +159,7 @@ function initGlobe() {
       "in": 16777215,
       "out": 2141154,
       "halo": 2141154,
-      "background": 0,
+      "background": null,
     },
     "brightness": {
       "ocean": 1.0,
