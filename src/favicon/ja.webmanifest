@@ -1,6 +1,6 @@
 {
-  "name": "Nation Flags Quiz",
-  "short_name": "Nation Flags Quiz",
+  "name": "国旗クイズ",
+  "short_name": "国旗クイズ",
   "icons": [
     {
       "src": "/flags-quiz/favicon/android-chrome-192x192.png",
@@ -15,6 +15,6 @@
   ],
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
-  "start_url": "https://marmooo.github.io/flags-quiz/",
+  "start_url": "https://marmooo.github.io/flags-quiz/ja/",
   "display": "standalone"
 }

@@ -1,6 +1,6 @@
 {
-  "name": "国旗クイズ",
-  "short_name": "国旗クイズ",
+  "name": "Nation Flags Quiz",
+  "short_name": "Nation Flags Quiz",
   "icons": [
     {
       "src": "/flags-quiz/favicon/android-chrome-192x192.png",

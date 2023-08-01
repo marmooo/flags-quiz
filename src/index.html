@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="ja">
+<html lang="en">
   <head prefix="og: http://ogp.me/ns#">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="国旗から国名を四択問題で答えるゲームです。">
-    <title>国旗クイズ</title>
-    <meta property="og:title" content="国旗クイズ">
-    <meta property="og:site_name" content="国旗クイズ">
-    <meta property="og:description" content="国旗から国名を四択問題で答えるゲームです。">
+    <meta name="description" content="A game to answer the name of the country from the flag with four choices.">
+    <title>Nation Flags Quiz</title>
+    <meta property="og:title" content="Nation Flags Quiz">
+    <meta property="og:site_name" content="Nation Flags Quiz">
+    <meta property="og:description" content="A game to answer the name of the country from the flag with four choices.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://marmooo.github.io/flags-quiz/">
     <meta property="og:image" content="https://marmooo.github.io/flags-quiz/favicon/apple-touch-icon.png">
@@ -63,31 +63,31 @@
       <nav class="navbar navbar-expand">
         <div class="container flex-wrap">
           <a class="navbar-brand" href="/flags-quiz/">
-            <img class="favicon" alt="国旗クイズ" src="/flags-quiz/favicon/favicon.svg" width="32" height="32">
-            国旗クイズ
+            <img class="favicon" alt="Nation Flags Quiz" src="/flags-quiz/favicon/favicon.svg" width="32" height="32">
+            Nation Flags Quiz
           </a>
           <div class="navbar-nav">
-            <select id="lang" class="form-select form-select-sm" aria-label="言語">
+            <select id="lang" class="form-select form-select-sm" aria-label="language">
               <option value="ja">日本語</option>
-              <option value="en">English</option>
+              <option value="en" selected>English</option>
             </select>
-            <button title="ダークモード切替" id="toggleDarkMode" class="fs-4 btn p-0 ms-1" type="button">🌓</button>
+            <button title="toggle-dark-mode" id="toggleDarkMode" class="fs-4 btn p-0 ms-1" type="button">🌓</button>
           </div>
         </div>
       </nav>
     </header>
     <main class="container">
       <noscript>
-        <div class="alert alert-warning">JavaScript を ON にしてください</div>
+        <div class="alert alert-warning">Please turn on JavaScript.</div>
       </noscript>
       <div>
         <div class="row">
           <div class="col-sm">
-            <p>国旗から国名を四択問題で答えるゲームです。</p>
+            <p>A game to answer the name of the country from the flag with four choices.</p>
           </div>
           <div class="col-sm">
             <div class="alert alert-info text-center h3">
-              スコア:
+              Score:
               <span class="notranslate ms-1">
                 <span id="score">0</span>
                 <span class="m-1">/</span>
@@ -98,13 +98,13 @@
         </div>
         <div class="row text-center">
           <div class="col-sm">
-            <button id="startButton" class="btn btn-primary btn-lg m-1" type="button">スタート</button>
+            <button id="startButton" class="btn btn-primary btn-lg m-1" type="button">START</button>
             <div id="flag">🇯🇵</div>
             <div id="choices" class="notranslate">
-              <button class="btn btn-lg btn-light my-2 w-100 border" type="button">日本</button>
-              <button class="btn btn-lg btn-light my-2 w-100 border" type="button">アメリカ合衆国</button>
-              <button class="btn btn-lg btn-light my-2 w-100 border" type="button">台湾</button>
-              <button class="btn btn-lg btn-light my-2 w-100 border" type="button">ロシア</button>
+              <button class="btn btn-lg btn-light my-2 w-100 border" type="button">Japan</button>
+              <button class="btn btn-lg btn-light my-2 w-100 border" type="button">United States</button>
+              <button class="btn btn-lg btn-light my-2 w-100 border" type="button">Taiwan</button>
+              <button class="btn btn-lg btn-light my-2 w-100 border" type="button">Russia</button>
             </div>
           </div>
           <div class="col-sm overflow-hidden">

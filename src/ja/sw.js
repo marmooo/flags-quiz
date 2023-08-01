@@ -2,7 +2,8 @@ var CACHE_NAME = "2023-08-02 07:40";
 var urlsToCache = [
   "/flags-quiz/",
   "/flags-quiz/index.js",
-  "/flags-quiz/data/en.csv",
+  "/flags-quiz/ja/",
+  "/flags-quiz/data/ja.csv",
   "/flags-quiz/mp3/incorrect1.mp3",
   "/flags-quiz/mp3/correct3.mp3",
   "/flags-quiz/favicon/favicon.svg",

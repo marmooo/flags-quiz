@@ -124,7 +124,7 @@ function initProblems() {
           c.classList.remove("text-danger");
         });
         totalCount += 1;
-        if (choices.every((c) => !c.textContent.startsWith("×"))) {
+        if (choices.every((c) => !c.textContent.startsWith("❌"))) {
           correctCount += 1;
         }
         scoring();
@@ -132,7 +132,9 @@ function initProblems() {
       } else {
         playAudio("incorrect");
         choice.classList.add("text-danger");
-        choice.textContent = "×" + choice.textContent;
+        if (!choice.textContent.startsWith("❌")) {
+          choice.textContent = "❌ " + choice.textContent;
+        }
       }
     };
   });
