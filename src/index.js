@@ -119,7 +119,7 @@ function initProblems() {
   choices.forEach((choice, i) => {
     choice.onclick = () => {
       if (i == answerPos) {
-        playAudio("correct");
+        playAudio("correct", 0.3);
         choices.forEach((c) => {
           c.classList.remove("text-danger");
         });
@@ -130,7 +130,7 @@ function initProblems() {
         scoring();
         nextProblem();
       } else {
-        playAudio("incorrect");
+        playAudio("incorrect", 0.3);
         choice.classList.add("text-danger");
         if (!choice.textContent.startsWith("❌")) {
           choice.textContent = "❌ " + choice.textContent;
