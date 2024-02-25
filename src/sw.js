@@ -1,4 +1,4 @@
-const CACHE_NAME = "2024-02-19 00:00";
+const CACHE_NAME = "2024-02-25 09:42";
 const urlsToCache = [
   "/flags-quiz/",
   "/flags-quiz/index.js",
@@ -6,7 +6,7 @@ const urlsToCache = [
   "/flags-quiz/mp3/incorrect1.mp3",
   "/flags-quiz/mp3/correct3.mp3",
   "/flags-quiz/favicon/favicon.svg",
-  "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js",
+  "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js",
   "https://cdn.jsdelivr.net/npm/three@0.102.1/build/three.min.js",
   "https://cdn.jsdelivr.net/npm/giojs@2.2.2/build/gio.min.js",
 ];
