@@ -2,7 +2,7 @@ let totalCount = 0;
 let correctCount = 0;
 let answerPos = 0;
 const problems = [];
-const audioContext = new AudioContext();
+const audioContext = new globalThis.AudioContext();
 const audioBufferCache = {};
 loadAudio("correct", "/flags-quiz/mp3/correct3.mp3");
 loadAudio("incorrect", "/flags-quiz/mp3/incorrect1.mp3");
