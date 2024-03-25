@@ -1,3 +1,5 @@
+import { Toast } from "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/+esm";
+
 let totalCount = 0;
 let correctCount = 0;
 let answerPos = 0;
@@ -185,7 +187,7 @@ function initGlobe() {
       countryInfo.addEventListener("hidden.bs.toast", () => {
         gio.switchCountry(answerId);
       });
-      const toast = bootstrap.Toast.getOrCreateInstance(countryInfo);
+      const toast = Toast.getOrCreateInstance(countryInfo);
       toast.show();
     }
   });
