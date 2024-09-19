@@ -1,8 +1,11 @@
-import { readLines } from "https://deno.land/std/io/mod.ts";
+import { TextLineStream } from "jsr:@std/streams/text-line-stream";
 
 const emojis = [];
-const fileReader = await Deno.open("src/data/en.csv");
-for await (const line of readLines(fileReader)) {
+const file = await Deno.open("src/data/en.csv");
+const lineStream = file.readable
+  .pipeThrough(new TextDecoderStream())
+  .pipeThrough(new TextLineStream());
+for await (const line of lineStream) {
   const emoji = line.split(",")[0];
   emojis.push(emoji);
 }
