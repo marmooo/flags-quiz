@@ -1,4 +1,4 @@
-import { Toast } from "https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/+esm";
+import { Toast } from "https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/+esm";
 
 let totalCount = 0;
 let correctCount = 0;
