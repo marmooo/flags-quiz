@@ -1,5 +1,9 @@
 import { Toast } from "https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/+esm";
+import { createWorker } from "https://cdn.jsdelivr.net/npm/emoji-particle@0.0.4/+esm";
 
+const emojiParticle = initEmojiParticle();
+const maxParticleCount = 10;
+let consecutiveWins = 0;
 let totalCount = 0;
 let correctCount = 0;
 let answerPos = 0;
@@ -82,6 +86,30 @@ function playAudio(name, volume) {
   sourceNode.start();
 }
 
+function initEmojiParticle() {
+  const canvas = document.createElement("canvas");
+  Object.assign(canvas.style, {
+    position: "fixed",
+    pointerEvents: "none",
+    top: "0px",
+    left: "0px",
+  });
+  canvas.width = document.documentElement.clientWidth;
+  canvas.height = document.documentElement.clientHeight;
+  document.body.appendChild(canvas);
+
+  const offscreen = canvas.transferControlToOffscreen();
+  const worker = createWorker();
+  worker.postMessage({ type: "init", canvas: offscreen }, [offscreen]);
+
+  globalThis.addEventListener("resize", () => {
+    const width = document.documentElement.clientWidth;
+    const height = document.documentElement.clientHeight;
+    worker.postMessage({ type: "resize", width, height });
+  });
+  return { canvas, offscreen, worker };
+}
+
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -143,6 +171,17 @@ function initProblems() {
     choice.onclick = () => {
       if (i == answerPos) {
         playAudio("correct", 0.3);
+        consecutiveWins += 1;
+        for (let i = 0; i < Math.min(consecutiveWins, maxParticleCount); i++) {
+          emojiParticle.worker.postMessage({
+            type: "spawn",
+            options: {
+              particleType: "popcorn",
+              originX: Math.random() * emojiParticle.canvas.width,
+              originY: Math.random() * emojiParticle.canvas.height,
+            },
+          });
+        }
         choices.forEach((c) => {
           c.classList.remove("text-danger");
         });
@@ -154,6 +193,7 @@ function initProblems() {
         nextProblem();
       } else {
         playAudio("incorrect", 0.3);
+        consecutiveWins = 0;
         choice.classList.add("text-danger");
         if (!choice.textContent.startsWith("❌")) {
           choice.textContent = "❌ " + choice.textContent;
