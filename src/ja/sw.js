@@ -1,4 +1,4 @@
-const cacheName = "2025-12-22 00:00";
+const cacheName = "2026-01-14 00:00";
 const urlsToCache = [
   "/flags-quiz/index.js",
   "/flags-quiz/data/ja.csv",
